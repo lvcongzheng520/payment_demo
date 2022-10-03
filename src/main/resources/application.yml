@@ -1,0 +1,27 @@
+# 服务端口
+server:
+  port: 8090
+
+spring:
+  application:
+    # 应用名称
+    name: payment-demo
+  # 调整返回的时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/payment_demo?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration: #sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/hsqyz/paymentdemo/mapper/xml/*.xml
+
+# 开启debug日志
+logging:
+  level:
+    root: info
